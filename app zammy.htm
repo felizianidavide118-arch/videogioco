@@ -1,0 +1,551 @@
+<html>
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta name=Generator content="Microsoft Word 15 (filtered)">
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:"Cambria Math";
+	panose-1:2 4 5 3 5 4 6 3 2 4;}
+@font-face
+	{font-family:Calibri;
+	panose-1:2 15 5 2 2 2 4 3 2 4;}
+@font-face
+	{font-family:"Segoe UI Emoji";
+	panose-1:2 11 5 2 4 2 4 2 2 3;}
+@font-face
+	{font-family:Consolas;
+	panose-1:2 11 6 9 2 2 4 3 2 4;}
+ /* Style Definitions */
+ p.MsoPlainText, li.MsoPlainText, div.MsoPlainText
+	{mso-style-link:"Testo normale Carattere";
+	margin:0cm;
+	font-size:10.5pt;
+	font-family:Consolas;}
+span.TestonormaleCarattere
+	{mso-style-name:"Testo normale Carattere";
+	mso-style-link:"Testo normale";
+	font-family:Consolas;}
+.MsoChpDefault
+	{font-family:"Calibri",sans-serif;}
+.MsoPapDefault
+	{margin-bottom:8.0pt;
+	line-height:107%;}
+@page WordSection1
+	{size:595.3pt 841.9pt;
+	margin:70.85pt 66.75pt 2.0cm 66.7pt;}
+div.WordSection1
+	{page:WordSection1;}
+-->
+</style>
+
+</head>
+
+<body lang=IT style='word-wrap:break-word'>
+
+<div class=WordSection1>
+
+<p class=MsoPlainText><span lang=EN-US style='font-family:"Courier New"'>import
+React, { useState } from 'react';<br>
+import { Plus, Trash2, Edit3, Save, ArrowRight, ArrowDown, User, Monitor,
+Smartphone } from 'lucide-react';<br>
+<br>
+export default function WebAppStoryboard() {<br>
+  const [frames, setFrames] = useState([<br>
+    {<br>
+      id: 1,<br>
+      title: &quot;Splash Screen + Audio&quot;,<br>
+      </span><span style='font-family:"Courier New"'>description: &quot;Logo
+del gioco con suono di motori, atmosphere highway&quot;,<br>
+      userAction: &quot;Tap per continuare, ascolta l'audio&quot;,<br>
+      screenContent: &quot;Logo animato, sfondo autostrada sfocata, 'TAP TO
+START'&quot;,<br>
+      notes: &quot;Suoni motori, musica epic, loading nascosto dietro
+animazioni&quot;,<br>
+      device: &quot;mobile&quot;<br>
+    },<br>
+    {<br>
+      id: 2,<br>
+      title: &quot;Menu Principale&quot;,<br>
+      description: &quot;Hub centrale con auto del giocatore in bella
+vista&quot;,<br>
+      </span><span lang=EN-US style='font-family:"Courier New"'>userAction:
+&quot;Sceglie PLAY, GARAGE, LEADERBOARD, SETTINGS&quot;,<br>
+      screenContent: &quot;Auto 3D rotante, bottoni grandi, coins/gems counter,
+daily challenges&quot;,<br>
+      </span><span style='font-family:"Courier New"'>notes: &quot;Auto come
+reward visuale, notifications per sfide giornaliere&quot;,<br>
+      </span><span lang=EN-US style='font-family:"Courier New"'>device:
+&quot;mobile&quot;<br>
+    },<br>
+    {<br>
+      id: 3,<br>
+      title: &quot;Car Selection/Garage + Progression&quot;,<br>
+      </span><span style='font-family:"Courier New"'>description:
+&quot;Showcase progressione auto: da city car basic &#8594; Ferrari
+F1&quot;,<br>
+      userAction: &quot;Swipe tra auto, vede stats e prezzi, aspira alla
+Ferrari&quot;,<br>
+      </span><span lang=EN-US style='font-family:"Courier New"'>screenContent:
+&quot;Carousel: City Car (owned) &#8594; Sport Car &#8594; Supercar &#8594;
+FERRARI F1 (locked), progress bar&quot;,<br>
+      </span><span style='font-family:"Courier New"'>notes: &quot;Ferrari F1
+come holy grail, preview 3D spettacolare, prezzi crescenti
+esponenzialmente&quot;,<br>
+      </span><span lang=EN-US style='font-family:"Courier New"'>device:
+&quot;mobile&quot;<br>
+    },<br>
+    {<br>
+      id: 4,<br>
+      title: &quot;Pre-Game Countdown&quot;,<br>
+      </span><span style='font-family:"Courier New"'>description: &quot;3-2-1
+con auto posizionata su autostrada&quot;,<br>
+      userAction: &quot;Si prepara mentalmente, vede tutorial
+controlli&quot;,<br>
+      screenContent: &quot;Vista terza persona auto ferma, countdown
+sovrapposto, hint controlli&quot;,<br>
+      </span><span lang=EN-US style='font-family:"Courier New"'>notes:
+&quot;Build up tensione, mostra comandi touch (swipe left/right, tap
+brake?)&quot;,<br>
+      device: &quot;mobile&quot;<br>
+    },<br>
+    {<br>
+      id: 5,<br>
+      title: &quot;Gameplay - City Car (Starter)&quot;,<br>
+      description: &quot;Gameplay con auto base: handling normale, velocità
+moderata&quot;,<br>
+      userAction: &quot;Swipe left/right, impara meccaniche base, accumula
+punti dodge&quot;,<br>
+      screenContent: &quot;Vista 3D city car, ostacoli standard, counter punti
+dodge prominente&quot;,<br>
+      </span><span style='font-family:"Courier New"'>notes: &quot;Auto starter
+deve sentirsi OK ma far desiderare upgrade, punti dodge = valuta
+principale&quot;,<br>
+      device: &quot;mobile&quot;<br>
+    },<br>
+    {<br>
+      id: 6,<br>
+      title: &quot;Gameplay - Accelerazione&quot;,<br>
+      description: &quot;Velocità aumenta, ostacoli più frequenti e
+vari&quot;,<br>
+      userAction: &quot;Riflessi più rapidi, precision steering&quot;,<br>
+      screenContent: &quot;Stesso layout ma speed lines, blur effects, ostacoli
+più densi&quot;,<br>
+      notes: &quot;Effetti particellari velocità, camera shake leggera, music
+uptempo&quot;,<br>
+      </span><span lang=EN-US style='font-family:"Courier New"'>device:
+&quot;mobile&quot;<br>
+    },<br>
+    {<br>
+      id: 7,<br>
+      title: &quot;Power-ups &amp; Collectibles&quot;,<br>
+      </span><span style='font-family:"Courier New"'>description: &quot;Coins
+da raccogliere, power-ups temporanei&quot;,<br>
+      userAction: &quot;Mira ai collectibles mantenendo controllo&quot;,<br>
+      </span><span lang=EN-US style='font-family:"Courier New"'>screenContent:
+&quot;Coins animate sulla strada, power-ups glowing, feedback
+collection&quot;,<br>
+      notes: &quot;Magnete coins, shield temporaneo, slow-motion, double
+coins&quot;,<br>
+      device: &quot;mobile&quot;<br>
+    },<br>
+    {<br>
+      id: 8,<br>
+      title: &quot;Game Over - Crash&quot;,<br>
+      </span><span style='font-family:"Courier New"'>description: &quot;Impatto
+drammatico ma non violento, stats performance&quot;,<br>
+      userAction: &quot;Vede il crash, poi stats della run&quot;,<br>
+      </span><span lang=EN-US style='font-family:"Courier New"'>screenContent:
+&quot;Slow-motion crash, fade to black, then stats screen (distance, coins,
+near misses)&quot;,<br>
+      </span><span style='font-family:"Courier New"'>notes: &quot;Crash
+spettacolare ma teen-friendly, celebration se nuovo record&quot;,<br>
+      device: &quot;mobile&quot;<br>
+    },<br>
+    {<br>
+      id: 9,<br>
+      title: &quot;Results &amp; Car Progression&quot;,<br>
+      description: &quot;Punti dodge accumulati, progress verso prossima auto,
+Ferrari teaser&quot;,<br>
+      </span><span lang=EN-US style='font-family:"Courier New"'>userAction:
+&quot;Vede dodge points, progress bar verso next car, preview
+Ferrari&quot;,<br>
+      screenContent: &quot;Dodge points counter animato, progress bar, next car
+silhouette, 'Ferrari: 50.000 pts'&quot;,<br>
+      </span><span style='font-family:"Courier New"'>notes: &quot;Ferrari
+sempre visibile come goal, progress bar genera FOMO e motivazione&quot;,<br>
+      </span><span lang=EN-US style='font-family:"Courier New"'>device:
+&quot;mobile&quot;<br>
+    },<br>
+    {<br>
+      id: 10,<br>
+      title: &quot;Social Features&quot;,<br>
+      description: &quot;Leaderboard amici, sfide giornaliere,
+achievements&quot;,<br>
+      userAction: &quot;Compara scores, accetta challenge, sblocca
+achievement&quot;,<br>
+      screenContent: &quot;Classifica, foto profili amici, daily challenges,
+badge achievements&quot;,<br>
+      notes: &quot;Social competition drive, push notifications per beat
+friends&quot;,<br>
+      device: &quot;mobile&quot;<br>
+    },<br>
+    {<br>
+      id: 11,<br>
+      title: &quot;FERRARI F1 UNLOCKED! </span><span style='font-family:"Segoe UI Emoji",sans-serif'>&#127942;</span><span
+style='font-family:"Courier New"'>&quot;,<br>
+      description: &quot;Momento clou: sblocco Ferrari F1 con celebrazione
+epica&quot;,<br>
+      userAction: &quot;Celebra, condivide achievement, prova immediatamente la
+Ferrari&quot;,<br>
+      screenContent: &quot;Ferrari F1 3D rotante, effetti dorati, confetti,
+'ULTIMATE UNLOCKED!', social share&quot;,<br>
+      notes: &quot;Momento più gratificante del gioco, auto-screenshot per
+social, audio trionfale&quot;,<br>
+      device: &quot;mobile&quot;<br>
+    },<br>
+    {<br>
+      id: 12,<br>
+      title: &quot;Gameplay - Ferrari F1 Mode&quot;,<br>
+      description: &quot;Esperienza finale: velocità massima, handling
+perfetto, sfide estreme&quot;,<br>
+      userAction: &quot;Gameplay ultra-veloce, precision required, adrenalina
+pura&quot;,<br>
+      screenContent: &quot;Ferrari rossa, speed blur intenso, ostacoli
+rapidissimi, UI sleek Formula 1&quot;,<br>
+      notes: &quot;Velocità doppia delle altre auto, effetti visivi premium,
+suoni F1 reali&quot;,<br>
+      </span><span lang=EN-US style='font-family:"Courier New"'>device:
+&quot;mobile&quot;<br>
+    }<br>
+  ]);<br>
+  <br>
+  const [editingFrame, setEditingFrame] = useState(null);<br>
+  const [projectInfo, setProjectInfo] = useState({<br>
+    name: &quot;Highway Rush - Endless Racing&quot;,<br>
+    target: &quot;Teen gamers 13-19 anni&quot;,<br>
+    goal: &quot;Session length + Daily retention&quot;<br>
+  });<br>
+<br>
+  const addFrame = () =&gt; {<br>
+    const newFrame = {<br>
+      id: Date.now(),<br>
+      title: `Frame ${frames.length + 1}`,<br>
+      description: &quot;&quot;,<br>
+      userAction: &quot;&quot;,<br>
+      screenContent: &quot;&quot;,<br>
+      notes: &quot;&quot;,<br>
+      device: &quot;mobile&quot;<br>
+    };<br>
+    setFrames([...frames, newFrame]);<br>
+  };<br>
+<br>
+  const deleteFrame = (id) =&gt; {<br>
+    setFrames(frames.filter(frame =&gt; frame.id !== id));<br>
+  };<br>
+<br>
+  const updateFrame = (id, field, value) =&gt; {<br>
+    setFrames(frames.map(frame =&gt; <br>
+      frame.id === id ? { ...frame, [field]: value } : frame<br>
+    ));<br>
+  };<br>
+<br>
+  const duplicateFrame = (id) =&gt; {<br>
+    const frameToDuplicate = frames.find(frame =&gt; frame.id === id);<br>
+    const newFrame = {<br>
+      ...frameToDuplicate,<br>
+      id: Date.now(),<br>
+      title: `${frameToDuplicate.title} (Copia)`<br>
+    };<br>
+    const frameIndex = frames.findIndex(frame =&gt; frame.id === id);<br>
+    const newFrames = [...frames];<br>
+    newFrames.splice(frameIndex + 1, 0, newFrame);<br>
+    setFrames(newFrames);<br>
+  };<br>
+<br>
+  const DeviceIcon = ({ device }) =&gt; {<br>
+    return device === 'mobile' ? &lt;Smartphone className=&quot;w-4 h-4&quot;
+/&gt; : &lt;Monitor className=&quot;w-4 h-4&quot; /&gt;;<br>
+  };<br>
+<br>
+  const exportStoryboard = () =&gt; {<br>
+    const data = {<br>
+      project: projectInfo,<br>
+      frames: frames,<br>
+      exportDate: new Date().toISOString()<br>
+    };<br>
+    const blob = new Blob([JSON.stringify(data, null, 2)], { type:
+'application/json' });<br>
+    const url = URL.createObjectURL(blob);<br>
+    const a = document.createElement('a');<br>
+    a.href = url;<br>
+    a.download = `${projectInfo.name}_storyboard.json`;<br>
+    a.click();<br>
+  };<br>
+<br>
+  return (<br>
+    &lt;div className=&quot;max-w-6xl mx-auto p-6 bg-gray-50
+min-h-screen&quot;&gt;<br>
+      {/* Header */}<br>
+      &lt;div className=&quot;bg-white rounded-lg shadow-sm p-6
+mb-6&quot;&gt;<br>
+        &lt;div className=&quot;flex justify-between items-start
+mb-4&quot;&gt;<br>
+          &lt;div className=&quot;flex-1&quot;&gt;<br>
+            &lt;input<br>
+              type=&quot;text&quot;<br>
+              value={projectInfo.name}<br>
+              onChange={(e) =&gt; setProjectInfo({...projectInfo, name:
+e.target.value})}<br>
+              className=&quot;text-2xl font-bold text-gray-800 bg-transparent
+border-none outline-none w-full&quot;<br>
+            /&gt;<br>
+            &lt;div className=&quot;flex gap-4 mt-2&quot;&gt;<br>
+              &lt;div className=&quot;flex items-center gap-2&quot;&gt;<br>
+                &lt;User className=&quot;w-4 h-4 text-gray-500&quot;
+/&gt;<br>
+                &lt;input<br>
+                  type=&quot;text&quot;<br>
+                  value={projectInfo.target}<br>
+                  onChange={(e) =&gt; setProjectInfo({...projectInfo, target:
+e.target.value})}<br>
+                  className=&quot;text-sm text-gray-600 bg-gray-100 px-2 py-1
+rounded&quot;<br>
+                  placeholder=&quot;Target audience&quot;<br>
+                /&gt;<br>
+              &lt;/div&gt;<br>
+              &lt;input<br>
+                type=&quot;text&quot;<br>
+                value={projectInfo.goal}<br>
+                onChange={(e) =&gt; setProjectInfo({...projectInfo, goal:
+e.target.value})}<br>
+                className=&quot;text-sm text-gray-600 bg-gray-100 px-2 py-1
+rounded&quot;<br>
+                </span><span style='font-family:"Courier New"'>placeholder=&quot;Obiettivo
+principale&quot;<br>
+              /&gt;<br>
+            &lt;/div&gt;<br>
+          &lt;/div&gt;<br>
+          </span><span lang=EN-US style='font-family:"Courier New"'>&lt;button<br>
+            onClick={exportStoryboard}<br>
+            className=&quot;bg-blue-600 text-white px-4 py-2 rounded-lg
+hover:bg-blue-700 transition-colors flex items-center gap-2&quot;<br>
+          &gt;<br>
+            &lt;Save className=&quot;w-4 h-4&quot; /&gt;<br>
+            Esporta<br>
+          &lt;/button&gt;<br>
+        &lt;/div&gt;<br>
+      &lt;/div&gt;<br>
+<br>
+      {/* Frames */}<br>
+      &lt;div className=&quot;space-y-4&quot;&gt;<br>
+        {frames.map((frame, index) =&gt; (<br>
+          &lt;div key={frame.id} className=&quot;bg-white rounded-lg shadow-sm
+border border-gray-200 overflow-hidden&quot;&gt;<br>
+            &lt;div className=&quot;bg-gray-50 px-4 py-3 border-b
+border-gray-200 flex items-center justify-between&quot;&gt;<br>
+              &lt;div className=&quot;flex items-center gap-3&quot;&gt;<br>
+                &lt;div className=&quot;bg-blue-100 text-blue-800 px-2 py-1
+rounded text-sm font-medium&quot;&gt;<br>
+                  </span><span style='font-family:"Courier New"'>{index +
+1}<br>
+                &lt;/div&gt;<br>
+                &lt;DeviceIcon device={frame.device} /&gt;<br>
+                </span><span lang=EN-US style='font-family:"Courier New"'>{editingFrame
+=== frame.id ? (<br>
+                  &lt;input<br>
+                    type=&quot;text&quot;<br>
+                    value={frame.title}<br>
+                    onChange={(e) =&gt; updateFrame(frame.id, 'title',
+e.target.value)}<br>
+                    onBlur={() =&gt; setEditingFrame(null)}<br>
+                    onKeyDown={(e) =&gt; e.key === 'Enter' &amp;&amp;
+setEditingFrame(null)}<br>
+                    className=&quot;font-medium bg-white px-2 py-1 rounded
+border&quot;<br>
+                    autoFocus<br>
+                  /&gt;<br>
+                ) : (<br>
+                  &lt;h3 <br>
+                    className=&quot;font-medium text-gray-800 cursor-pointer
+hover:text-blue-600&quot;<br>
+                    onClick={() =&gt; setEditingFrame(frame.id)}<br>
+                  &gt;<br>
+                    {frame.title}<br>
+                  &lt;/h3&gt;<br>
+                )}<br>
+              &lt;/div&gt;<br>
+              &lt;div className=&quot;flex items-center gap-2&quot;&gt;<br>
+                &lt;select<br>
+                  value={frame.device}<br>
+                  onChange={(e) =&gt; updateFrame(frame.id, 'device',
+e.target.value)}<br>
+                  className=&quot;text-xs bg-white border rounded px-2
+py-1&quot;<br>
+                &gt;<br>
+                  &lt;option
+value=&quot;desktop&quot;&gt;Desktop&lt;/option&gt;<br>
+                  &lt;option
+value=&quot;mobile&quot;&gt;Mobile&lt;/option&gt;<br>
+                &lt;/select&gt;<br>
+                &lt;button<br>
+                  onClick={() =&gt; duplicateFrame(frame.id)}<br>
+                  className=&quot;text-gray-500 hover:text-gray-700
+p-1&quot;<br>
+                  title=&quot;Duplica frame&quot;<br>
+                &gt;<br>
+                  &lt;Edit3 className=&quot;w-4 h-4&quot; /&gt;<br>
+                &lt;/button&gt;<br>
+                &lt;button<br>
+                  onClick={() =&gt; deleteFrame(frame.id)}<br>
+                  className=&quot;text-red-500 hover:text-red-700
+p-1&quot;<br>
+                  title=&quot;Elimina frame&quot;<br>
+                &gt;<br>
+                  &lt;Trash2 className=&quot;w-4 h-4&quot; /&gt;<br>
+                &lt;/button&gt;<br>
+              &lt;/div&gt;<br>
+            &lt;/div&gt;<br>
+            <br>
+            &lt;div className=&quot;p-4 grid grid-cols-1 md:grid-cols-2
+gap-4&quot;&gt;<br>
+              &lt;div className=&quot;space-y-3&quot;&gt;<br>
+                &lt;div&gt;<br>
+                  &lt;label className=&quot;block text-xs font-medium text-gray-600
+mb-1&quot;&gt;DESCRIZIONE SCENA&lt;/label&gt;<br>
+                  &lt;textarea<br>
+                    value={frame.description}<br>
+                    onChange={(e) =&gt; updateFrame(frame.id, 'description',
+e.target.value)}<br>
+                    className=&quot;w-full p-2 border border-gray-300 rounded
+text-sm resize-none&quot;<br>
+                    </span><span style='font-family:"Courier New"'>rows=&quot;2&quot;<br>
+                    placeholder=&quot;Cosa succede in questa
+schermata?&quot;<br>
+                  </span><span lang=EN-US style='font-family:"Courier New"'>/&gt;<br>
+                &lt;/div&gt;<br>
+                &lt;div&gt;<br>
+                  &lt;label className=&quot;block text-xs font-medium
+text-gray-600 mb-1&quot;&gt;AZIONE UTENTE&lt;/label&gt;<br>
+                  &lt;textarea<br>
+                    value={frame.userAction}<br>
+                    onChange={(e) =&gt; updateFrame(frame.id, 'userAction',
+e.target.value)}<br>
+                    className=&quot;w-full p-2 border border-gray-300 rounded
+text-sm resize-none&quot;<br>
+                    </span><span style='font-family:"Courier New"'>rows=&quot;2&quot;<br>
+                    placeholder=&quot;Cosa fa l'utente? </span><span
+lang=EN-US style='font-family:"Courier New"'>Click, scroll,
+input...&quot;<br>
+                  /&gt;<br>
+                &lt;/div&gt;<br>
+              &lt;/div&gt;<br>
+              <br>
+              &lt;div className=&quot;space-y-3&quot;&gt;<br>
+                &lt;div&gt;<br>
+                  &lt;label className=&quot;block text-xs font-medium
+text-gray-600 mb-1&quot;&gt;CONTENUTO SCHERMO&lt;/label&gt;<br>
+                  &lt;textarea<br>
+                    value={frame.screenContent}<br>
+                    onChange={(e) =&gt; updateFrame(frame.id, 'screenContent',
+e.target.value)}<br>
+                    className=&quot;w-full p-2 border border-gray-300 rounded
+text-sm resize-none&quot;<br>
+                    rows=&quot;2&quot;<br>
+                    placeholder=&quot;Layout, elementi UI, testi,
+immagini...&quot;<br>
+                  /&gt;<br>
+                &lt;/div&gt;<br>
+                &lt;div&gt;<br>
+                  &lt;label className=&quot;block text-xs font-medium
+text-gray-600 mb-1&quot;&gt;NOTE DESIGN/UX&lt;/label&gt;<br>
+                  &lt;textarea<br>
+                    value={frame.notes}<br>
+                    onChange={(e) =&gt; updateFrame(frame.id, 'notes',
+e.target.value)}<br>
+                    className=&quot;w-full p-2 border border-gray-300 rounded
+text-sm resize-none&quot;<br>
+                    </span><span style='font-family:"Courier New"'>rows=&quot;2&quot;<br>
+                    placeholder=&quot;Animazioni, stati hover,
+responsive...&quot;<br>
+                  </span><span lang=EN-US style='font-family:"Courier New"'>/&gt;<br>
+                &lt;/div&gt;<br>
+              &lt;/div&gt;<br>
+            &lt;/div&gt;<br>
+            <br>
+            {index &lt; frames.length - 1 &amp;&amp; (<br>
+              &lt;div className=&quot;flex justify-center py-2 bg-gray-50
+border-t&quot;&gt;<br>
+                &lt;ArrowDown className=&quot;w-5 h-5 text-gray-400&quot;
+/&gt;<br>
+              &lt;/div&gt;<br>
+            )}<br>
+          &lt;/div&gt;<br>
+        ))}<br>
+      &lt;/div&gt;<br>
+<br>
+      {/* Add Frame Button */}<br>
+      &lt;div className=&quot;flex justify-center mt-6&quot;&gt;<br>
+        &lt;button<br>
+          onClick={addFrame}<br>
+          className=&quot;bg-green-600 text-white px-6 py-3 rounded-lg
+hover:bg-green-700 transition-colors flex items-center gap-2
+font-medium&quot;<br>
+        &gt;<br>
+          &lt;Plus className=&quot;w-5 h-5&quot; /&gt;<br>
+          Aggiungi Frame<br>
+        &lt;/button&gt;<br>
+      &lt;/div&gt;<br>
+<br>
+      {/* Tips */}<br>
+      &lt;div className=&quot;mt-8 bg-blue-50 rounded-lg p-4&quot;&gt;<br>
+        &lt;h4 className=&quot;font-medium text-blue-800 mb-2&quot;&gt;</span><span
+style='font-family:"Segoe UI Emoji",sans-serif'>&#127950;&#65039;</span><span
+lang=EN-US style='font-family:"Courier New"'> Tips Specifici per Racing Game
+Teen:&lt;/h4&gt;<br>
+        &lt;ul className=&quot;text-sm text-blue-700 space-y-1&quot;&gt;<br>
+          </span><span style='font-family:"Courier New"'>&lt;li&gt;•
+&lt;strong&gt;Controlli intuitivi&lt;/strong&gt; - swipe left/right, tap per
+azioni speciali&lt;/li&gt;<br>
+          </span><span lang=EN-US style='font-family:"Courier New"'>&lt;li&gt;•
+&lt;strong&gt;Feedback immediato&lt;/strong&gt; - screen shake, particle
+effects, audio reactive&lt;/li&gt;<br>
+          </span><span style='font-family:"Courier New"'>&lt;li&gt;•
+&lt;strong&gt;Progressive difficulty&lt;/strong&gt; - curva di apprendimento
+graduale ma sfidante&lt;/li&gt;<br>
+          </span><span lang=EN-US style='font-family:"Courier New"'>&lt;li&gt;•
+&lt;strong&gt;Collectible economy&lt;/strong&gt; - coins &#8594; unlock cars
+&#8594; status symbol&lt;/li&gt;<br>
+          </span><span style='font-family:"Courier New"'>&lt;li&gt;•
+&lt;strong&gt;Near-miss rewards&lt;/strong&gt; - bonus points per evitare
+ostacoli per un pelo&lt;/li&gt;<br>
+          &lt;li&gt;• &lt;strong&gt;Daily challenges&lt;/strong&gt; -
+&quot;Raccogli 100 coins&quot;, &quot;Evita 50 auto
+consecutive&quot;&lt;/li&gt;<br>
+          &lt;li&gt;• &lt;strong&gt;Leaderboard amici&lt;/strong&gt; -
+competizione sociale = retention&lt;/li&gt;<br>
+          &lt;li&gt;• &lt;strong&gt;Moments sharing&lt;/strong&gt; - clip
+auto-generate di crash spettacolari o record&lt;/li&gt;<br>
+          &lt;li&gt;• &lt;strong&gt;Progressione auto motivante&lt;/strong&gt;
+- City Car &#8594; Sport &#8594; Super &#8594; FERRARI F1 (ultimate goal)&lt;/li&gt;<br>
+          &lt;li&gt;• &lt;strong&gt;Dodge points economy&lt;/strong&gt; - ogni
+ostacolo evitato = punti verso prossima auto&lt;/li&gt;<br>
+          &lt;li&gt;• &lt;strong&gt;Ferrari come status symbol&lt;/strong&gt; -
+screenshot auto-generate quando sbloccata&lt;/li&gt;<br>
+          &lt;li&gt;• &lt;strong&gt;Diferenziazione handling&lt;/strong&gt; -
+ogni auto deve sentirsi unica (speed, acceleration, drift)&lt;/li&gt;<br>
+          &lt;li&gt;• &lt;strong&gt;Visual progression&lt;/strong&gt; - effetti
+visivi premium sbloccati con auto migliori&lt;/li&gt;<br>
+        &lt;/ul&gt;<br>
+      &lt;/div&gt;<br>
+    &lt;/div&gt;<br>
+  );<br>
+}</span></p>
+
+</div>
+
+</body>
+
+</html>
